@@ -25,6 +25,7 @@ void resize(int w, int h) {
 
 void init(void) {
 	glClearColor(0.0, 0.0, 0.0, 1.0);
+	gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
 }
 
 int main(int argc, char** argv) {
