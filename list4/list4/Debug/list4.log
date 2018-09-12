@@ -1,2 +1,3 @@
 ﻿  list4.cpp
-  list4.vcxproj -> C:\Users\User\Documents\Visual Studio 2017\Projects\list4\Debug\list4.exe
+  LINK : 前回のインクリメンタル リンクで C:\Users\User\Documents\GitHub\pro4\list4\Debug\list4.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  list4.vcxproj -> C:\Users\User\Documents\GitHub\pro4\list4\Debug\list4.exe
