@@ -24,10 +24,20 @@ void resize(int w, int h) {
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluOrtho2D(
-		-w / 200.0, w / 200.0,
-		-h / 200.0, h / 200.0
+
+	if (h>w) {
+		gluOrtho2D(
+			-w / w, w / w,
+			-h / w, h / w
 		);
+	}
+
+	if (w > h) {
+		gluOrtho2D(
+			-w / h, w / h,
+			-h / h, h / h
+		);
+	}
 }
 
 void init(void) {
@@ -36,7 +46,7 @@ void init(void) {
 
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
-	glutInitWindowSize(640, 480);
+	glutInitWindowSize(1000, 480);
 	glutCreateWindow(argv[0]);
 	glutDisplayFunc(display);
 	glutReshapeFunc(resize);
