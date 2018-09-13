@@ -27,7 +27,11 @@ void resize(int w, int h) {
 	gluOrtho2D(
 		-w / 200.0, w / 200.0,
 		-h / 200.0, h / 200.0
-		);
+	);
+}
+
+void idle(void) {
+	glutPostRedisplay();
 }
 
 void init(void) {
@@ -39,6 +43,7 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(640, 480);
 	glutCreateWindow(argv[0]);
 	glutDisplayFunc(display);
+	glutPostRedisplay();
 	glutReshapeFunc(resize);
 	init();
 	glutMainLoop();
