@@ -8,11 +8,12 @@ void display(void) {
 	double theta, dt, x, y;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3d(1.0, 0.0, 0.0);
-	dt = 2.0*M_PI / 3.0;
+	dt = M_PI / 2.0;
 	theta = 0.0;
 	glBegin(GL_TRIANGLES);
-	for (i = 0; i < 3; i++) {
-		x = cos(theta);
+
+	for (i = 0; i < 5 ; i++) {
+		x = -sin(theta);
 		y = sin(theta);
 		glVertex2d(x, y);
 		theta += dt;
