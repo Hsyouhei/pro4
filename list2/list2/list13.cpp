@@ -10,6 +10,18 @@ static void timer(int dummy) {
 	glutPostRedisplay();
 }
 
+/*リスト16*/
+void keyin(
+	unsigned char key, int x, int y
+) {
+	switch(key){
+		case'\033':/*ESC*/
+		case'q':
+		case'Q':exit(0);
+		default: break;
+	}
+}
+
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_LINES);
@@ -45,6 +57,8 @@ int main(int argc, char** argv) {
 	glutDisplayFunc(display);
 	/*リスト15呼び出し*/
 	glutTimerFunc(10, timer, 0);
+	/*リスト16呼び出し*/
+	glutKeyboardFunc(keyin);
 	glutReshapeFunc(resize);
 	init();
 	glutMainLoop();
