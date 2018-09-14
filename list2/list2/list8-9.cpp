@@ -1,7 +1,15 @@
-ï»¿#include<GL/glut.h>
+#include<GL/glut.h>
 #include<math.h>
 
 #define M_PI 3.14159265358979323846 
+
+/*ƒŠƒXƒg8*/
+void idle(void) {
+	glutPostRedisplay();
+}
+
+/*ƒŠƒXƒg9*/
+double rotAng = 0.0;
 
 void display(void) {
 	int i;
@@ -9,7 +17,7 @@ void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3d(1.0, 0.0, 0.0);
 	dt = M_PI / 2;
-	theta = 0.0;
+	theta = rotAng;
 	glBegin(GL_POLYGON);
 	for (i = 0; i < 4; i++) {
 		x = cos(theta);
@@ -19,6 +27,7 @@ void display(void) {
 	}
 	glEnd();
 	glFlush();
+	rotAng += 3.0*M_PI / 180.0;
 }
 void resize(int w, int h) {
 	glViewport(0, 0, w, h);
@@ -41,7 +50,7 @@ void resize(int w, int h) {
 }
 
 void init(void) {
-	/*åˆæœŸåŒ–å‘½ä»¤*/
+	/*‰Šú‰»–½—ß*/
 }
 
 int main(int argc, char** argv) {
@@ -49,6 +58,7 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(640.0, 480.0);
 	glutCreateWindow(argv[0]);
 	glutDisplayFunc(display);
+	glutIdleFunc(idle);
 	glutReshapeFunc(resize);
 	init();
 	glutMainLoop();

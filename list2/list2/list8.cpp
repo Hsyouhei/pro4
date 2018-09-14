@@ -27,7 +27,7 @@ void display(void) {
 	}
 	glEnd();
 	glFlush();
-	rotAng += 3.0*M_PI/180.0;
+	//rotAng += 3.0*M_PI/180.0;
 }
 
 //ƒŠƒXƒg10
@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
 	glutCreateWindow(argv[0]);
 	glutDisplayFunc(display);
 	glutIdleFunc(idle);
-	glutPostRedisplay();
+	//glutPostRedisplay();
 	glutReshapeFunc(resize);
 	init();
 	glutMainLoop();
